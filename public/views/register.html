@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="col-lg-7">
+		<div class="online-exam">
+			
+		</div>
+	</div>
+	<div class="col-lg-5">
+		<form name="newUser" ng-submit="registered()" class="form-horizontal" novalidate>
+			<div class="row form-group has-feedback">
+				<label class="col-lg-4">Username:</label>
+				<div class="col-lg-6">
+					<input class="form-control" name="name" ng-class="{'has-error':newUser.name.$touched && newUser.name.$error.required}" ng-model="user.name" placeholder="username" ng-required="true"></input>
+					<i ng-show="newUser.name.$dirty && newUser.name.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+				</div>
+			</div>
+			<div class="row form-group has-feedback">
+				<label class="col-lg-4">Email:</label>
+				<div class="col-lg-6">
+				<input class="form-control" name="email" type="email" ng-class="{'has-error':newUser.email.$touched && newUser.email.$error.required}" ng-model="user.email" type="email" placeholder="email" ng-required="true"></input>
+				<i ng-show="newUser.email.$dirty && newUser.email.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+				</div>
+			</div>
+			<div class="row form-group has-feedback">
+				<label class="col-lg-4">Password:</label>
+				<div class="col-lg-6">
+				<input class="form-control" name="pwd" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/" ng-class="{'has-error':newUser.pwd.$touched && newUser.pwd.$error.required}" ng-model="user.pwd" type="password" placeholder="password" ng-required="true"></input>
+				<i ng-show="newUser.pwd.$dirty && newUser.pwd.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+				</div>
+			</div>
+			<div class="row form-group has-feedback">
+				<label class="col-lg-4">Confirm-Password:</label>
+				<div class="col-lg-6">
+				<input class="form-control" name="cpwd" ng-model="user.cpwd" ng ng-class="{'has-error':newUser.cpwd.$touched && newUser.cpwd.$error.required}" type="password" placeholder="password" ng-required="true" ng-match="user.pwd"></input>
+				<i ng-if="user.pwd==='swathi'" class="glyphicon glyphicon-remove form-control-feedback"></i>
+				</div>
+			</div>
+			
+			<div class="row form-group">
+				<div class="col-lg-8">
+				<button type="submit" class="btn btn-primary">Register</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
