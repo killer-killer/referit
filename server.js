@@ -8,5 +8,6 @@ require('./server/config/express')(app);
 require('./server/config/routes').init(app);
 
 app.listen('1111',function(req,res) {
+	console.log(2);
 	console.log("server listening at 1111");
 });
